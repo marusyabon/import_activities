@@ -1,0 +1,79 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Notes {
+  id                Int      @id @default(autoincrement())
+  hs_id             String   @unique @db.VarChar(255)
+  hs_timestamp      String?  @db.VarChar(255)
+  hubspot_owner_id  String?  @db.VarChar(255)
+  hs_note_body      String?
+  hs_attachment_ids String?
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+}
+
+model Emails {
+  id                 Int      @id @default(autoincrement())
+  hs_id              String   @unique @db.VarChar(255)
+  hs_timestamp       String?  @db.VarChar(255)
+  hubspot_owner_id   String?  @db.VarChar(255)
+  hs_email_direction String?  @db.VarChar(255)
+  hs_email_html      String?
+  hs_email_status    String?  @db.VarChar(255)
+  hs_email_subject   String?
+  hs_email_text      String?
+  hs_attachment_ids  String?
+  hs_email_headers   String?
+  createdAt          DateTime @default(now()) @map("created_at")
+  updatedAt          DateTime @updatedAt @map("updated_at")
+}
+
+model Calls {
+  id                            Int      @id @default(autoincrement())
+  hs_id                         String   @unique @db.VarChar(255)
+  hs_timestamp                  String?  @db.VarChar(255)
+  hubspot_owner_id              String?  @db.VarChar(255)
+  hs_call_body                  String?
+  hs_call_callee_object_id      String?  @db.VarChar(255)
+  hs_call_callee_object_type_id String?  @db.VarChar(255)
+  hs_call_direction             String?  @db.VarChar(255)
+  hs_call_disposition           String?  @db.VarChar(255)
+  hs_call_duration              String?  @db.VarChar(255)
+  hs_call_from_number           String?  @db.VarChar(255)
+  hs_call_recording_url         String?
+  hs_call_status                String?  @db.VarChar(255)
+  hs_call_title                 String?  @db.VarChar(255)
+  hs_call_source                String?  @db.VarChar(255)
+  hs_call_to_number             String?  @db.VarChar(255)
+  hs_activity_type              String?  @db.VarChar(255)
+  hs_attachment_ids             String?
+  createdAt                     DateTime @default(now()) @map("created_at")
+  updatedAt                     DateTime @updatedAt @map("updated_at")
+}
+
+model Tasks {
+  id                Int      @id @default(autoincrement())
+  hs_id             String   @unique @db.VarChar(255)
+  hs_timestamp      String?  @db.VarChar(255)
+  hubspot_owner_id  String?  @db.VarChar(255)
+  hs_task_body      String?
+  hs_task_subject   String?
+  hs_task_status    String?  @db.VarChar(255)
+  hs_task_priority  String?  @db.VarChar(255)
+  hs_task_type      String?  @db.VarChar(255)
+  hs_task_reminders String?
+  createdAt         DateTime @default(now()) @map("created_at")
+  updatedAt         DateTime @updatedAt @map("updated_at")
+}

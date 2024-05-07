@@ -1,0 +1,24 @@
+{
+  "name": "hs_activities",
+  "version": "0.0.1",
+  "description": "HS activities",
+  "author": "Vention",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "scripts": {
+    "prisma:migration:generate": "npx prisma migrate dev --name",
+    "prisma:db:push": "npx prisma db push",
+    "prisma:migrate:deploy": "npx prisma migrate deploy",
+    "prisma:seed:initdata": "ts-node prisma/seeds/initData/seeds.ts",
+    "prisma:seed:mockdata": "ts-node prisma/seeds/mockData/seeds.ts"
+  },
+  "dependencies": {
+    "@hubspot/api-client": "^11.1.0",
+    "@prisma/client": "^5.13.0",
+    "nodemon": "^3.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.13.0"
+  }
+}
