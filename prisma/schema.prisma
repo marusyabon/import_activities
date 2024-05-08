@@ -77,3 +77,22 @@ model Tasks {
   createdAt         DateTime @default(now()) @map("created_at")
   updatedAt         DateTime @updatedAt @map("updated_at")
 }
+
+model Meetings {
+  id                        Int      @id @default(autoincrement())
+  hs_id                     String   @unique @db.VarChar(255)
+  hs_timestamp              String?  @db.VarChar(255)
+  hubspot_owner_id          String?  @db.VarChar(255)
+  hs_meeting_title          String?
+  hs_meeting_body           String?
+  hs_internal_meeting_notes String?
+  hs_meeting_external_URL   String?
+  hs_meeting_location       String?
+  hs_meeting_start_time     String?  @db.VarChar(255)
+  hs_meeting_end_time       String?  @db.VarChar(255)
+  hs_meeting_outcome        String?
+  hs_activity_type          String?  @db.VarChar(255)
+  hs_attachment_ids         String?
+  createdAt                 DateTime @default(now()) @map("created_at")
+  updatedAt                 DateTime @updatedAt @map("updated_at")
+}
