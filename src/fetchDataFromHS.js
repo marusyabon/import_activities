@@ -72,3 +72,20 @@ export async function fetchEmails(after) {
       : console.error(e)
   }
 }
+
+export async function fetchMeetings(after) {
+  try {
+    console.info(`Start fetching HS meetings after id=${after}`);
+    const apiResponse = await hubspotClient.crm.objects.meetings.basicApi.getPage(limit, after, properties.meetings, propertiesWithHistory, associations, archived);
+    console.info(`Meetings fetching complited`);
+    
+    return apiResponse;
+
+  } catch (e) {
+    console.error('Meetings fetching completed with errors');
+
+    e.message === 'HTTP request failed'
+      ? console.error(JSON.stringify(e.response, null, 2))
+      : console.error(e)
+  }
+}

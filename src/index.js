@@ -1,12 +1,13 @@
-import { latestCallID, latestEmailID, latestNoteID, latestTaskID } from './getLatestIDs.js';
-import { importNotes, importCalls, importTasks, importEmails } from './importDataToDB/index.js';
+import { latestCallID, latestEmailID, latestMeetinglID, latestNoteID, latestTaskID } from './getLatestIDs.js';
+import { importNotes, importCalls, importTasks, importEmails, importMeetings } from './importDataToDB/index.js';
 
 async function importHsActivitiesToDB() {
   await Promise.all([
     importNotes(latestNoteID),
     importCalls(latestCallID),
     importTasks(latestTaskID),
-    importEmails(latestEmailID)
+    importEmails(latestEmailID),
+    importMeetings(latestMeetinglID)
   ]);
 }
 

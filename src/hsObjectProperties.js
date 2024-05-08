@@ -37,5 +37,19 @@ export const properties = {
     "hs_email_text",
     "hs_attachment_ids",
     "hs_email_headers"
+  ],
+  meetings: [
+    "hs_timestamp", 
+    "hubspot_owner_id",
+    "hs_meeting_title",
+    "hs_meeting_body",
+    "hs_internal_meeting_notes",
+    "hs_meeting_external_URL",
+    "hs_meeting_location",
+    "hs_meeting_start_time",
+    "hs_meeting_end_time",
+    "hs_meeting_outcome",
+    "hs_activity_type",
+    "hs_attachment_ids",
   ]
 }

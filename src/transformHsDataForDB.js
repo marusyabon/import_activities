@@ -58,3 +58,21 @@ export function transformEmails(emails) {
     hs_email_headers: el.properties.hs_email_headers
   }))
 }
+
+export function transformMeetings(meetings) {
+  return meetings.map(el => ({
+    hs_id: el.id,
+    hs_timestamp: el.properties.hs_timestamp,
+    hubspot_owner_id: el.properties.hubspot_owner_id,
+    hs_meeting_title: el.properties.hs_meeting_title,
+    hs_meeting_body: el.properties.hs_meeting_body,
+    hs_internal_meeting_notes: el.properties.hs_internal_meeting_notes,
+    hs_meeting_external_URL: el.properties.hs_meeting_external_URL,
+    hs_meeting_location: el.properties.hs_meeting_location,
+    hs_meeting_start_time: el.properties.hs_meeting_start_time,
+    hs_meeting_end_time: el.properties.hs_meeting_end_time,
+    hs_meeting_outcome: el.properties.hs_meeting_outcome,
+    hs_activity_type: el.properties.hs_activity_type,
+    hs_attachment_ids: el.properties.hs_attachment_ids,
+  }))
+}

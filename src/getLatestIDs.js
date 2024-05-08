@@ -28,4 +28,11 @@ const latestEmail = await prisma.emails.findMany({
 });
 const latestEmailID = latestEmail[0]?.hs_id;
 
-export {latestNoteID, latestTaskID, latestCallID, latestEmailID};
+// Meetings 
+const latestMeeting = await prisma.meetings.findMany({
+  orderBy: { id: 'desc' },
+  take: 1,
+});
+const latestMeetinglID = latestMeeting[0]?.hs_id;
+
+export {latestNoteID, latestTaskID, latestCallID, latestEmailID, latestMeetinglID};
