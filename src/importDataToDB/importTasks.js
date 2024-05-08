@@ -15,7 +15,7 @@ export default async function importTasks(after) {
 
     console.info(`${result.count} tasks were added to DB`)
 
-    after = apiResponse.paging.next.after;
+    after = apiResponse.paging?.next.after;
     if (after) importTasks(after);
 }
 

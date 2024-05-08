@@ -15,7 +15,7 @@ export default async function importNotes(after) {
 
     console.info(`${result.count} notes were added to DB`)
 
-    after = apiResponse.paging.next.after;
+    after = apiResponse.paging?.next.after;
     if (after) importNotes(after);
 }
 

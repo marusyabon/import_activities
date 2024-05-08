@@ -15,7 +15,7 @@ export default async function importEmails(after) {
 
     console.info(`${result.count} emails were added to DB`)
 
-    after = apiResponse.paging.next.after;
+    after = apiResponse.paging?.next.after;
     if (after) importEmails(after);
   }
 

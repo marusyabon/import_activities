@@ -15,7 +15,7 @@ export default async function importMeetings(after) {
 
     console.info(`${result.count} meetings were added to DB`)
 
-    after = apiResponse.paging.next.after;
+    after = apiResponse.paging?.next.after;
     if (after) importMeetings(after);
 }
 

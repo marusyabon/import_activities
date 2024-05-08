@@ -15,7 +15,7 @@ export default async function importCalls(after) {
 
     console.info(`${result.count} calls were added to DB`)
 
-    after = apiResponse.paging.next.after;
+    after = apiResponse.paging?.next.after;
     if (after) importCalls(after);
 }
 
