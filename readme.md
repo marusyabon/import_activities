@@ -1,6 +1,6 @@
 ## Installation
 
-1. Copy .env.example, rename IT, and set the correct ACCESS_TOKEN.
+1. Copy .env.example, rename it, and set the correct ACCESS_TOKEN.
 2. Create Postgresql DB, and set the correct DATABASE_URL in .env
 3. Run `npm i`
 4. Run `npm run prisma:db:push`
@@ -8,9 +8,8 @@
 
 ## Usage
 
-
 ```bash
-node src/index.js
+npm start
 ```
 
 ## Contributing

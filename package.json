@@ -7,6 +7,7 @@
   "license": "UNLICENSED",
   "type": "module",
   "scripts": {
+    "start": "node src/index.js",
     "prisma:migration:generate": "npx prisma migrate dev --name",
     "prisma:db:push": "npx prisma db push",
     "prisma:migrate:deploy": "npx prisma migrate deploy",
